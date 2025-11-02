@@ -6,7 +6,7 @@ fn main() {
 	io::stdin()
 		.read_line(&mut filepath)
 		.expect("Failed to read line");
-	if let Ok(_contents) = fs::read_to_string(filepath) {
+	if let Ok(_contents) = fs::File::open(filepath.trim()) {
 		println!("success");
 	}
 	else {
